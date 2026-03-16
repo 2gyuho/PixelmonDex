@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --pokered: #e3350d;
+  --pokeyellow: #ffcb05;
+  --pokegray: #1a1a2e;
+}
+
+body {
+  background-color: #0f0f1a;
+  color: #e2e8f0;
+  min-height: 100vh;
+}
+
+/* 스크롤바 스타일 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #1a1a2e;
+}
+::-webkit-scrollbar-thumb {
+  background: #ffcb05;
+  border-radius: 3px;
+}

@@ -1,0 +1,15 @@
+{
+  "name": {
+    "translate": "pixelmon.battle.tier.ag.level.100"
+  },
+  "description": {
+    "translate": "pixelmon.battle.tier.ag.level.100.description"
+  },
+  "min_pokemon_inclusive": 1,
+  "max_pokemon_inclusive": 6,
+  "rules": [
+    "pixelmon:exitable",
+    "pixelmon:level_cap/100",
+    "pixelmon:raise_to_cap"
+  ]
+}
