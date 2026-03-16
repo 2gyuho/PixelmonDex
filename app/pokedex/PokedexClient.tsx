@@ -44,6 +44,8 @@ export default function PokedexClient({ pokemonList }: PokedexClientProps) {
   const [page, setPage] = useState(1);
   const [selectedUid, setSelectedUid] = useState<number | null>(null);
 
+  const normalizeRarity = (value: string) => value.trim().toLowerCase();
+
   const filtered = useMemo(() => {
     const q = query.toLowerCase();
     return pokemonList.filter((p) => {
@@ -56,7 +58,7 @@ export default function PokedexClient({ pokemonList }: PokedexClientProps) {
       const matchType =
         typeFilters.length === 0 || typeFilters.every((t) => pTypes.includes(t));
       const matchRarity =
-        rarityFilter === "전체" || p.rarity.includes(rarityFilter);
+        rarityFilter === "전체" || normalizeRarity(p.rarity) === normalizeRarity(rarityFilter);
       const matchSpawn =
         spawnFilter === "전체" || p.spawnTime.includes(spawnFilter);
       return matchQuery && matchType && matchRarity && matchSpawn;
